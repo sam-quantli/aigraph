@@ -1,0 +1,23 @@
+{
+  "name": "aigraph-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --no-node-snapshot ./node_modules/tsx/dist/cli.mjs watch src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node --no-node-snapshot dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^4.21.0",
+    "isolated-vm": "^6.1.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.8.0"
+  }
+}
