@@ -5,7 +5,7 @@
  * Long when MACD crosses above signal; flat/exit when MACD crosses below.
  *
  * Candle rows may be:
- * - Quantly DTO: `{ o?, h?, l?, c?, v?, t? }` (compact keys)
+ * - Quantli DTO: `{ o?, h?, l?, c?, v?, t? }` (compact keys)
  * - Legacy: `{ open, high, low, close, volume?, date? }`
  *
  * Expects chronological order (oldest first). Strategy uses `close` only (+ optional date).

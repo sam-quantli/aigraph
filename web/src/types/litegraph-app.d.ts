@@ -7,6 +7,15 @@ declare module '@/lib/litegraph/src/litegraph' {
   export class LGraph {
     constructor(o?: unknown)
     add(node: LGraphNode): void
+    getNodeById(id: string | number): LGraphNode | null
+    clear(): void
+    configure(data: unknown): void
+    serialize(): {
+      version?: number | string
+      nodes: unknown[]
+      links: unknown[]
+      [key: string]: unknown
+    }
     stop(): void
   }
 
@@ -22,10 +31,23 @@ declare module '@/lib/litegraph/src/litegraph' {
 
   export class LGraphNode {
     constructor(title?: string, type?: string)
+    static color: string
+    static bgcolor: string
+    id: string | number
     pos: [number, number]
+    boxcolor?: string
     properties: Record<string, unknown>
     addInput(name: string, type: string): void
     addOutput(name: string, type: string): void
+    addWidget(
+      type: string,
+      name: string,
+      value: unknown,
+      callback: ((value: unknown) => void) | null,
+      options?: Record<string, unknown>
+    ): void
+    addTitleButton(options: Record<string, unknown>): void
+    getInputData(slot: number): unknown
     setOutputData(slot: number, data: unknown): void
     onExecute?(): void
   }

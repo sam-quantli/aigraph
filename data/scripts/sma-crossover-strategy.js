@@ -2,7 +2,7 @@
  * Dual simple moving average crossover — fast SMA crosses above slow SMA → buy;
  * fast crosses below slow → sell. Classic trend-following baseline.
  *
- * Candle rows: Quantly `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
+ * Candle rows: Quantli `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
  * Chronological order (oldest first). Uses `close` only.
  *
  * @param {{ context: { jobId: string }, payload?: Record<string, unknown> }} input

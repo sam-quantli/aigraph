@@ -476,46 +476,77 @@
       "graph": {
         "id": "00000000-0000-0000-0000-000000000000",
         "revision": 0,
-        "last_node_id": 6,
-        "last_link_id": 3,
+        "last_node_id": 10,
+        "last_link_id": 13,
         "nodes": [
           {
-            "id": 1,
-            "type": "core/start",
+            "id": 9,
+            "type": "quantli/get_candles",
             "pos": [
-              40,
-              80
+              254.23935665643634,
+              426.10208904859616
             ],
             "size": [
-              140,
-              60
+              210,
+              142
             ],
             "flags": {},
-            "order": 0,
+            "order": 2,
             "mode": 0,
-            "inputs": [],
+            "inputs": [
+              {
+                "name": "flow",
+                "type": "flow",
+                "link": 13
+              },
+              {
+                "name": "symbolCode",
+                "type": "string",
+                "link": null
+              },
+              {
+                "name": "timeRange",
+                "type": "string",
+                "link": null
+              }
+            ],
             "outputs": [
               {
                 "name": "next",
                 "type": "flow",
                 "links": [
-                  1
+                  9
                 ]
               },
               {
-                "name": "payload",
-                "type": "any",
+                "name": "symbolCode",
+                "type": "string",
                 "links": null
+              },
+              {
+                "name": "timeRange",
+                "type": "string",
+                "links": null
+              },
+              {
+                "name": "candles",
+                "type": "candles",
+                "links": [
+                  11
+                ]
               }
             ],
-            "properties": {}
+            "properties": {
+              "symbolCode": "NVDA",
+              "timeRange": "5Y"
+            }
           },
           {
             "id": 5,
             "type": "quantli/get_candles",
             "pos": [
-              336.00006103515625,
-              131.79998779296875
+              266.45687285253103,
+              84.609948291458
             ],
             "size": [
               210,
@@ -573,18 +604,90 @@
             }
           },
           {
+            "id": 1,
+            "type": "core/start",
+            "pos": [
+              40,
+              80
+            ],
+            "size": [
+              140,
+              60
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [],
+            "outputs": [
+              {
+                "name": "next",
+                "type": "flow",
+                "links": [
+                  1,
+                  13
+                ]
+              },
+              {
+                "name": "payload",
+                "type": "any",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
+            "id": 10,
+            "type": "quantli/candles_chart",
+            "pos": [
+              587.0035371229983,
+              362.6091932556391
+            ],
+            "size": [
+              448.2495098844853,
+              374.1998497370397
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "name": "flow",
+                "type": "flow",
+                "link": 9
+              },
+              {
+                "name": "candles",
+                "type": "candles",
+                "link": 11
+              }
+            ],
+            "outputs": [
+              {
+                "name": "next",
+                "type": "flow",
+                "links": null
+              },
+              {
+                "name": "candles",
+                "type": "candles",
+                "links": null
+              }
+            ],
+            "properties": {}
+          },
+          {
             "id": 6,
             "type": "quantli/candles_chart",
             "pos": [
-              720.0000610351562,
-              114.20004272460938
+              585.6648297346263,
+              -53.65043942079792
             ],
             "size": [
-              509.31634388500163,
-              419.0547194662304
+              443.26063653385575,
+              348.5074983863475
             ],
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
               {
@@ -602,7 +705,7 @@
               {
                 "name": "next",
                 "type": "flow",
-                "links": null
+                "links": []
               },
               {
                 "name": "candles",
@@ -637,24 +740,48 @@
             6,
             1,
             "candles"
+          ],
+          [
+            9,
+            9,
+            0,
+            10,
+            0,
+            "flow"
+          ],
+          [
+            11,
+            9,
+            3,
+            10,
+            1,
+            "candles"
+          ],
+          [
+            13,
+            1,
+            0,
+            9,
+            0,
+            "flow"
           ]
         ],
         "groups": [],
         "config": {},
         "extra": {
           "ds": {
-            "scale": 1,
+            "scale": 1.1,
             "offset": [
-              30.875286428954894,
-              102.39827326704676
+              181.09987858877201,
+              231.03727604920937
             ]
           }
         },
         "version": 0.4
       },
       "createdAt": "2026-04-02T04:55:11.265Z",
-      "updatedAt": "2026-04-02T06:32:43.408Z",
-      "version": 6
+      "updatedAt": "2026-04-02T06:47:13.361Z",
+      "version": 12
     }
   ]
 }

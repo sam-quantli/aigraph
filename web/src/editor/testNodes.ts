@@ -200,10 +200,12 @@ export function registerAigraphTestNodes(): void {
 
 export function sampleTestNodeLayout(): Array<{ type: string; pos: [number, number] }> {
   return [
-    { type: 'aigraph/demo', pos: [60, 60] },
-    { type: 'aigraph/test/widgets', pos: [60, 220] },
-    { type: 'aigraph/test/numeric', pos: [420, 60] },
-    { type: 'aigraph/test/string', pos: [420, 220] },
-    { type: 'aigraph/test/chrome', pos: [720, 60] }
+    { type: 'core/start', pos: [40, 80] },
+    { type: 'control/if_else', pos: [280, 80] },
+    { type: 'core/log', pos: [560, 20] },
+    { type: 'core/log', pos: [560, 170] },
+    { type: 'aigraph/demo', pos: [60, 320] },
+    { type: 'aigraph/test/widgets', pos: [320, 320] },
+    { type: 'aigraph/test/numeric', pos: [580, 320] }
   ]
 }

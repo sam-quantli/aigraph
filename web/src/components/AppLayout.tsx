@@ -36,7 +36,7 @@ export function AppLayout() {
         <Group h="100%" justify="space-between" style={{ flex: 1 }}>
           <Group gap="sm">
             <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-            <Text fw={600}>aigraph</Text>
+            <Text fw={600}>Quantli - Workflow</Text>
           </Group>
         </Group>
       </AppShell.Header>

@@ -2,7 +2,7 @@
  * Bollinger band mean-reversion — SMA(20) ± 2σ. Long on close reclaiming above the
  * lower band after at or below it; exit when close crosses at or above the middle band.
  *
- * Candle rows: Quantly `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
+ * Candle rows: Quantli `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
  * Chronological order (oldest first). Uses `close` only.
  *
  * @param {{ context: { jobId: string }, payload?: Record<string, unknown> }} input

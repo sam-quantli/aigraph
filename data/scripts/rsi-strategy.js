@@ -3,7 +3,7 @@
  * (above oversoldLevel after being at or below it); exit long when RSI crosses down
  * out of overbought (below overboughtLevel after being at or above it).
  *
- * Candle rows: Quantly `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
+ * Candle rows: Quantli `{ o,h,l,c,v,t }` or legacy `{ open, high, low, close, ... }`.
  * Chronological order (oldest first). Uses `close` only.
  *
  * @param {{ context: { jobId: string }, payload?: Record<string, unknown> }} input
