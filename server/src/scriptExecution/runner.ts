@@ -21,7 +21,10 @@ function normalizeOutput(raw: unknown): ScriptExecuteOutput {
   if (!Array.isArray(data)) {
     throw new Error("execute() must return { data: array, ... }.");
   }
-  if (!Array.isArray(codes) || !codes.every((c) => typeof c === "number" && Number.isFinite(c))) {
+  if (
+    !Array.isArray(codes) ||
+    !codes.every((c) => typeof c === "number" && Number.isFinite(c))
+  ) {
     throw new Error("execute() must return { codes: number[], ... }.");
   }
   if (typeof success !== "boolean") {
@@ -41,7 +44,9 @@ export async function runScriptFile(
   const { scriptName, jobId } = options;
   const fullInput = {
     context: { jobId },
-    ...(options.input.payload !== undefined ? { payload: options.input.payload } : {}),
+    ...(options.input.payload !== undefined
+      ? { payload: options.input.payload }
+      : {}),
   };
 
   let source: string;
@@ -82,15 +87,11 @@ export async function runScriptFile(
       };
     }
 
-    const rawResult = await context.evalClosure(
-      "return execute($0)",
-      [fullInput],
-      {
-        arguments: { copy: true },
-        result: { promise: true, copy: true },
-        timeout: RUN_TIMEOUT_MS,
-      }
-    );
+    const rawResult = await context.evalClosure("return execute($0)", [fullInput], {
+      arguments: { copy: true },
+      result: { promise: true, copy: true },
+      timeout: RUN_TIMEOUT_MS,
+    });
 
     let output: ScriptExecuteOutput;
     try {

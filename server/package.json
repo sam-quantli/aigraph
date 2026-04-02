@@ -7,14 +7,18 @@
     "dev": "node --no-node-snapshot ./node_modules/tsx/dist/cli.mjs watch src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "node --no-node-snapshot dist/index.js",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --no-node-snapshot ./node_modules/tsx/dist/cli.mjs --test src/**/*.test.ts",
+    "apigen": "openapi-ts -f openapi-ts.config.ts"
   },
   "dependencies": {
     "dotenv": "^17.3.1",
     "express": "^4.21.0",
-    "isolated-vm": "^6.1.2"
+    "isolated-vm": "^6.1.2",
+    "socket.io": "^4.8.3"
   },
   "devDependencies": {
+    "@hey-api/openapi-ts": "^0.94.5",
     "@types/express": "^4.17.21",
     "@types/node": "^22.10.0",
     "tsx": "^4.19.0",

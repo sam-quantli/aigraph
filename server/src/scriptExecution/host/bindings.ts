@@ -16,12 +16,6 @@ function scriptHostDebug(...args: unknown[]): void {
 export async function installScriptHostBindings(
   context: IsolateContext
 ): Promise<void> {
-  await context.global.set(
-    "debug",
-    new ivm.Callback(scriptHostDebug)
-  );
-  await context.global.set(
-    "getData",
-    new ivm.Callback(mockHostGetData, { async: true })
-  );
+  await context.global.set("debug", new ivm.Callback(scriptHostDebug));
+  await context.global.set("getData", new ivm.Callback(mockHostGetData, { async: true }));
 }
